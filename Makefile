@@ -30,6 +30,18 @@ test:
 push:
 	docker push ${IMAGE}
 
-.PHONY: clearme
+.PHONY: clear-me
 clearme:
 	docker image rm ${IMAGE}
+
+.PHONY: release
+release:
+	git tag "v${VERSION}"; \
+	git push origin "v${VERSION}"; \
+	gh release create "v${VERSION}" -t "v${VERSION}" -F changelog.md
+
+.PHONY: unrelease
+unrelease:
+	gh release delete -y "v${VERSION}"; \
+	git tag -d "v${VERSION}"; \
+	git push origin ":v${VERSION}"
