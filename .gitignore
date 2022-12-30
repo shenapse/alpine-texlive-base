@@ -1,0 +1,4 @@
+.devcontainer
+*.code-workspace
+*.log
+*.synctex.gz
