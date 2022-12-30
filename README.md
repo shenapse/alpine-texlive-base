@@ -38,9 +38,7 @@ docker pull shena4746/alpine-textlive-base:tag
 
 ### Add packages via `tlmgr`
 
-If you want to add packages available via `tlmgr`, edit [install-additional-packages.sh](./script/install-additional-packages.sh) and build a new image by running `make build` at the project root.
-
-If you want to add collection-xxxx, editing `textlive.profile` would be a better choice.
+If you want to add packages available via `tlmgr`, edit [install-additional-packages.sh](./script/install-additional-packages.sh) and build a new image by running `make build` at the project root. If you want to add collection-xxxx, editing `textlive.profile` would be a better choice.
 
 ### Extend the image
 
