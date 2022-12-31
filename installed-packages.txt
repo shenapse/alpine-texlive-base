@@ -1,4 +1,4 @@
-shena4746/alpine-texlive-base:0.0.1
+shena4746/alpine-texlive-base:0.1.0
 
 i ae: Virtual fonts for T1 encoded CMR-fonts
 i algorithms: A suite of tools for typesetting algorithms in pseudo-code
@@ -16,6 +16,9 @@ i babel: Multilingual support for LaTeX, LuaLaTeX, XeLaTeX, and Plain TeX
 i babel-english: Babel support for English
 i babelbib: Multilingual bibliographies
 i beamer: A LaTeX class for producing presentations and slides
+i biber: A BibTeX replacement for users of BibLaTeX
+i biber.x86_64-linuxmusl: x86_64-linuxmusl files of biber
+i biblatex: Sophisticated Bibliographies in LaTeX
 i bibtex: Process bibliographies (bib files) for LaTeX or other formats
 i bibtex.x86_64-linuxmusl: x86_64-linuxmusl files of bibtex
 i bigintcalc: Integer calculations on very large numbers
@@ -131,6 +134,7 @@ i lineno: Line numbers on paragraphs
 i listings: Typeset source code listings using LaTeX
 i lm: Latin modern fonts in outline formats
 i lm-math: OpenType maths fonts for Latin Modern
+i logreq: Support for automation of the LaTeX workflow
 i ltxcmds: Some LaTeX kernel commands for general use
 i ltxmisc: Miscellaneous LaTeX packages, etc
 i lua-alt-getopt: Process application arguments the same way as getopt_long
