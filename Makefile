@@ -1,6 +1,6 @@
 USERNAME=shena4746
 SOURCE=Dockerfile
-VERSION=1.0
+VERSION=0.0.1
 IMAGE=${USERNAME}/alpine-texlive-base:${VERSION}
 
 ifeq ($(OS),Windows_NT)
@@ -38,7 +38,7 @@ clearme:
 release:
 	git tag "v${VERSION}"; \
 	git push origin "v${VERSION}"; \
-	gh release create "v${VERSION}" -t "v${VERSION}" -F changelog.md
+	gh release create "v${VERSION}" -t "v${VERSION}" -F CHANGELOG.md
 
 .PHONY: unrelease
 unrelease:

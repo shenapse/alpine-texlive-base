@@ -21,7 +21,7 @@ See [installed-packages.txt](./installed-packages.txt).
 The following command builds `project-top/tex/master.tex` with lualatex:
 
 ```bash
-	docker run --rm -v ${PWD}:/workdir shena4746/alpine-texlive-base:1.0 \
+	docker run --rm -v ${PWD}:/workdir shena4746/alpine-texlive-base:0.0.1 \
     sh -c 'cd tex && latexmk -outdir=../out -lualatex -shell-escape -synctex=1 master.tex'
 ```
 
@@ -30,7 +30,7 @@ The following command builds `project-top/tex/master.tex` with lualatex:
 The image is available on Docker Hub.
 
 ```bash
-# replace tag with your intended version (e.g., 1.0)
+# replace tag with your intended version (e.g., 0.0.1)
 docker pull shena4746/alpine-textlive-base:tag
 ```
 
