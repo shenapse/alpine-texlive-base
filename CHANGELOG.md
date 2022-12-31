@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.0] - 2022-12-31
+
+### Added
+
+- biblatex and biber package
+
+### Changed
+
+- adopt biblatex & biber style bibliography on sample file. The previous bibtex style is now removed.
+
 ## [0.0.1] - 2022-12-31
 
 ### Added
