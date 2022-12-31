@@ -21,7 +21,9 @@ RUN tlmgr install \
     latexindent \
     synctex \
     texcount \
-    chktex
+    chktex \
+    biblatex \
+    biber
 # install requirements for latexindent
 RUN apk add --no-cache \
     perl-yaml-tiny \
