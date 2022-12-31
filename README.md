@@ -12,6 +12,7 @@ A Lightweight TeXLive Docker image. It includes:
 - synctex
 - texcount
 - chktex
+- biblatex & biber
 - extra packages (written in [install-additional-packages.sh](./script/install-additional-packages.sh))
 
 See [installed-packages.txt](./installed-packages.txt).
