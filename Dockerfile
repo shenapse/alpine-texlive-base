@@ -52,6 +52,7 @@ RUN apk add --no-cache \
     # expand perl modules
     && tar xzf perls.tar.gz \
     # remove tar 
-    && rm perls.tar.gz
+    && rm perls.tar.gz \
+    && rm -rf /var/cache/apk/*
 WORKDIR /workdir
 CMD ["bash"]
