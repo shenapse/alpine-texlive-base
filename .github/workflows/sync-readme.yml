@@ -15,4 +15,4 @@ jobs:
         with:
           destination_container_repo: ${{ secrets.DOCKER_USER }}/alpine-texlive-base
           provider: dockerhub
-          short_description: 'my short description 😊'
+          short_description: 'A Lightweight TeXLive image based on collection-basic, bundled with latexmk, latexindent, etc.'
