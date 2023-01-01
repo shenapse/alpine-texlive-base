@@ -13,6 +13,6 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
         with:
-          destination_container_repo: ${{ secrets.DOCKER_USER }}/test
+          destination_container_repo: ${{ secrets.DOCKER_USER }}/alpine-texlive-base
           provider: dockerhub
           short_description: 'my short description 😊'
