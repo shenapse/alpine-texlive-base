@@ -1,6 +1,6 @@
 USERNAME=shena4746
 SOURCE=Dockerfile
-VERSION=0.1.0
+VERSION=0.2.0
 IMAGE=${USERNAME}/alpine-texlive-base:${VERSION}
 
 ifeq ($(OS),Windows_NT)
