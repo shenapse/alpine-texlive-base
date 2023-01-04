@@ -1,4 +1,4 @@
-shena4746/alpine-texlive-base:0.1.0
+shena4746/alpine-texlive-base:0.2.0
 
 i ae: Virtual fonts for T1 encoded CMR-fonts
 i algorithms: A suite of tools for typesetting algorithms in pseudo-code
