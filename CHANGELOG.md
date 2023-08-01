@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.1] - 2023-08-01
+
+### Fixed
+
+- update `tlmgr` to make it work in container shell
+
 ## [0.3.0] - 2023-08-01
 
-## Changed
+### Changed
 
 - adopt texlive-2023
 
