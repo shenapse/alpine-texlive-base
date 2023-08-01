@@ -15,14 +15,14 @@ A Lightweight TeXLive Docker image. It includes:
 - biblatex & biber
 - extra packages (written in [install-additional-packages.sh](./script/install-additional-packages.sh))
 
-See [installed-packages.txt](./installed-packages.txt).
+See [texlive-version.txt](./texlive-version.txt), [installed-packages.txt](./installed-packages.txt) for details.
 
 ## Usage
 
 The following command builds `project-top/tex/master.tex` with lualatex:
 
 ```bash
-	docker run --rm -v ${PWD}:/workdir shena4746/alpine-texlive-base:0.0.1 \
+ docker run --rm -v ${PWD}:/workdir shena4746/alpine-texlive-base:0.0.1 \
     sh -c 'cd tex && latexmk -outdir=../out -lualatex -shell-escape -synctex=1 master.tex'
 ```
 

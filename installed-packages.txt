@@ -1,4 +1,4 @@
-shena4746/alpine-texlive-base:0.2.0
+shena4746/alpine-texlive-base:0.3.0
 
 i ae: Virtual fonts for T1 encoded CMR-fonts
 i algorithms: A suite of tools for typesetting algorithms in pseudo-code
@@ -180,6 +180,7 @@ i oberdiek: A bundle of packages submitted by Heiko Oberdiek
 i pagesel: Select pages of a document for output
 i palatino: URW 'Base 35' font pack for LaTeX
 i parskip: Layout with zero \parindent, non-zero \parskip
+i pdfcolfoot: Separate color stack for footnotes with pdfTeX
 i pdfescape: Implements pdfTeX's escape features using TeX or e-TeX
 i pdflscape: Make landscape pages display as landscape
 i pdfmanagement-testphase: LaTeX PDF management testphase bundle

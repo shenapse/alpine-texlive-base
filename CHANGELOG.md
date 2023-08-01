@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.0] - 2023-08-01
+
+## Changed
+
+- adopt texlive-2023
+
+### Added
+
+- `texlive-version.txt`
+
 ## [0.2.0] - 2023-01-04
 
 ### Added
