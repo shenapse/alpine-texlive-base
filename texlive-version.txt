@@ -1,0 +1,5 @@
+shena4746/alpine-texlive-base:0.3.0
+
+tlmgr revision 66798 (2023-04-08 02:15:21 +0200)
+tlmgr using installation: /usr/local/texlive/2023
+TeX Live (https://tug.org/texlive) version 2023

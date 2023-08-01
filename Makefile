@@ -1,6 +1,6 @@
 USERNAME=shena4746
 SOURCE=Dockerfile
-VERSION=0.2.0
+VERSION=0.3.0
 IMAGE=${USERNAME}/alpine-texlive-base:${VERSION}
 
 ifeq ($(OS),Windows_NT)
@@ -10,11 +10,15 @@ endif
 # build container image
 .PHONY: build
 build:
-	docker image build -f ${SOURCE} -t ${IMAGE} . && make dump-package
+	docker image build -f ${SOURCE} -t ${IMAGE} . && make dump-package && make texlive-version
 
 .PHONY: dump-package
 dump-package:
 	sh ./script/dump-package-info.sh ${IMAGE}
+
+.PHONY: texlive-version
+texlive-version:
+	sh ./script/texlive-version.sh ${IMAGE}
 
 # create new container and login to the shell
 .PHONY: shell
