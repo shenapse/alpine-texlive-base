@@ -49,11 +49,15 @@ RUN apk add --no-cache \
 	bash \
 	perl \
 	git \
+	curl \
 	&& ln -s /usr/local/texlive/*/bin/* /usr/local/bin/texlive \
 	# expand perl modules
 	&& tar xzf modules.tar.gz \
-	# remove tar 
-	&& rm modules.tar.gz \
-	&& rm -rf /var/cache/apk/*
+	# update tlmgr
+	&& wget http://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh \
+	&& chmod +x update-tlmgr-latest.sh \
+	&& ./update-tlmgr-latest.sh \
+	# remove files
+	&& rm -rf /var/cache/apk/* rm modules.tar.gz ./update-tlmgr-latest.sh
 WORKDIR /workdir
 CMD ["bash"]

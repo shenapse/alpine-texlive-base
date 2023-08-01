@@ -1,4 +1,4 @@
-shena4746/alpine-texlive-base:0.3.0
+shena4746/alpine-texlive-base:0.3.1
 
 tlmgr revision 66798 (2023-04-08 02:15:21 +0200)
 tlmgr using installation: /usr/local/texlive/2023
