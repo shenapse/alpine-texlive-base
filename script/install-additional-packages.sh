@@ -4,6 +4,6 @@ tlmgr install \
     docmute \
     bxpapersize \
     cancel \
-    esvect \
-    nicematrix \
-    algorithms
+	unicode-math-input \
+	mathcommand \
+	lualatex-math
