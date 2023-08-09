@@ -5,4 +5,4 @@
 # $2 outdir
 
 DIR_PARENT=$(dirname $1)
-cd ${DIR_PARENT} && mkdir -p $2 && latexmk -outdir=$2 -lualatex -shell-escape -synctex=1 $1
+cd ${DIR_PARENT} && mkdir -p $2 && latexmk -outdir=$2 -lualatex -synctex=1 $1

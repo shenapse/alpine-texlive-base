@@ -1,7 +1,6 @@
-shena4746/alpine-texlive-base:0.3.1
+shena4746/alpine-texlive-base:0.3.2
 
 i ae: Virtual fonts for T1 encoded CMR-fonts
-i algorithms: A suite of tools for typesetting algorithms in pseudo-code
 i amscls: AMS document classes for LaTeX
 i amsfonts: TeX fonts from the American Mathematical Society
 i amsmath: AMS mathematical facilities for LaTeX
@@ -58,7 +57,6 @@ i ec: Computer modern fonts in T1 and TS1 encodings
 i enctex: A TeX extension that translates input on its way into TeX
 i epstopdf-pkg: Call epstopdf "on the fly"
 i eso-pic: Add picture commands (or backgrounds) to every page
-i esvect: Vector arrows
 i etex: An extended version of TeX, from the NTS project
 i etex-pkg: E-TeX support package
 i etexcmds: Avoid name clashes with e-TeX commands
@@ -141,6 +139,7 @@ i lua-alt-getopt: Process application arguments the same way as getopt_long
 i lua-uni-algos: Unicode algorithms for LuaTeX
 i luahbtex: LuaTeX with HarfBuzz library for glyph shaping
 i luahbtex.x86_64-linuxmusl: x86_64-linuxmusl files of luahbtex
+i lualatex-math: Fixes for mathematics-related LuaLaTeX issues
 i lualibs: Additional Lua functions for LuaTeX macro programmers
 i luaotfload: OpenType 'loader' for Plain TeX and LaTeX
 i luaotfload.x86_64-linuxmusl: x86_64-linuxmusl files of luaotfload
@@ -153,6 +152,7 @@ i makeindex: Makeindex development sources
 i makeindex.x86_64-linuxmusl: x86_64-linuxmusl files of makeindex
 i manfnt-font: Knuth's "manual" fonts
 i marvosym: Martin Vogel's Symbols (marvosym) font
+i mathcommand: \newcommand-like commands for defining math macros
 i mathpazo: Fonts to typeset mathematics to match Palatino
 i mathspec: Specify arbitrary fonts for mathematics in XeTeX
 i mathtools: Mathematical tools to use with amsmath
@@ -174,7 +174,6 @@ i ms: Various LaTeX packages by Martin Schroder
 i natbib: Flexible bibliography support
 i ncntrsbk: URW 'Base 35' font pack for LaTeX
 i newfloat: Define new floating environments
-i nicematrix: Improve the typesetting of mathematical matrices with PGF
 i ntgclass: "European" versions of standard classes
 i oberdiek: A bundle of packages submitted by Heiko Oberdiek
 i pagesel: Select pages of a document for output
@@ -243,6 +242,7 @@ i ucharcat: Implementation of the (new in 2015) XeTeX \Ucharcat command in lua, 
 i underscore: Control the behaviour of "_" in text
 i unicode-data: Unicode data and loaders for TeX
 i unicode-math: Unicode mathematics support for XeTeX and LuaTeX
+i unicode-math-input: Allow entering Unicode symbols in math formulas
 i uniquecounter: Provides unlimited unique counter
 i url: Verbatim with URL-sensitive line breaks
 i utopia: Adobe Utopia fonts

@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.2] - 2023-08-10
+
+### Added
+
+- created a latexindent config file in the home directory that specifies the location of user-setting files.
+
+### Changed
+
+- separated the build of the perl module from that of texlive, which were originally a single build.
+
 ## [0.3.1] - 2023-08-01
 
 ### Fixed

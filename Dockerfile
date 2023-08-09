@@ -1,4 +1,9 @@
-FROM alpine:3.17.0 AS base
+ARG DIR='workdir'
+ARG latexindent_config=".indentconfig.yaml"
+FROM alpine:3.17.0 AS dev-texlive
+# load arguments
+ARG DIR
+ARG latexindent_config
 ENV PATH /usr/local/bin/texlive:$PATH
 WORKDIR /install-tl-unx
 RUN set -x
@@ -6,14 +11,13 @@ RUN apk add --no-cache --virtual .fetch-deps \
 	make \
 	perl-app-cpanminus
 RUN apk add --no-cache \
-	perl \
-	xz
+	perl
 COPY ./texlive.profile ./
 RUN wget -nv https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 RUN tar -xzf ./install-tl-unx.tar.gz --strip-components=1
 RUN ./install-tl --profile=texlive.profile
 RUN ln -sf /usr/local/texlive/*/bin/* /usr/local/bin/texlive
-# tools for build and text editor 
+# tools for writing environment 
 RUN tlmgr install \
 	latexmk \
 	latexindent \
@@ -22,6 +26,23 @@ RUN tlmgr install \
 	chktex \
 	biblatex \
 	biber
+# add packages for writing
+COPY ${PWD}/script/install-additional-packages.sh /work-tmp/install.sh
+RUN sh /work-tmp/install.sh
+# create latexindent config file
+RUN echo "paths:" > /work-tmp/${latexindent_config} \
+	&& echo "  - /${DIR}/.latexindent.yaml" >> /work-tmp/${latexindent_config}
+# remove --virtuals
+RUN apk del --purge .fetch-deps
+
+# perl requirements for latexindent
+FROM alpine:3.17.0 AS dev-perl
+RUN apk add --no-cache --virtual .fetch-deps \
+	make \
+	perl-app-cpanminus
+RUN apk add --no-cache \
+	perl \
+	xz
 # install requirements for latexindent
 RUN apk add --no-cache \
 	perl-yaml-tiny \
@@ -35,16 +56,15 @@ RUN tar czf /modules.tar.gz \
 	/usr/local/share/perl5/site_perl \
 	/usr/lib/perl5/vendor_perl \
 	/usr/share/perl5/vendor_perl
-# add more packages you need
-COPY ${PWD}/script/install-additional-packages.sh /work-tmp/install.sh
-RUN sh /work-tmp/install.sh
-# remove --virtuals
 RUN apk del --purge .fetch-deps
 
 FROM alpine:3.17.0
 ENV PATH /usr/local/bin/texlive:$PATH
-COPY --from=base /usr/local/texlive /usr/local/texlive 
-COPY --from=base /modules.tar.gz /modules.tar.gz
+ARG DIR
+ARG latexindent_config
+COPY --from=dev-texlive /usr/local/texlive /usr/local/texlive 
+COPY --from=dev-texlive /work-tmp/${latexindent_config} /~/${latexindent_config}
+COPY --from=dev-perl /modules.tar.gz /modules.tar.gz
 RUN apk add --no-cache \
 	bash \
 	perl \
@@ -57,7 +77,8 @@ RUN apk add --no-cache \
 	&& wget http://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh \
 	&& chmod +x update-tlmgr-latest.sh \
 	&& ./update-tlmgr-latest.sh \
+	&& tlmgr update --self --all \
 	# remove files
 	&& rm -rf /var/cache/apk/* rm modules.tar.gz ./update-tlmgr-latest.sh
-WORKDIR /workdir
+WORKDIR /${DIR}
 CMD ["bash"]
