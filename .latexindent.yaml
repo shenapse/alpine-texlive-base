@@ -1,0 +1,66 @@
+# this file overwrite some of the default setting for latexindent
+# location of default setting file can be found by running `latexindent -vv` 
+
+#------------------------------------------
+#------------------------------------------
+#------------------------------------------
+#------------------------------------------
+
+# only one backup per file:
+#   - if onlyOneBackUp is 0 then, as a safety measure,
+#     the number on the extension increments by 1 each time:
+#
+#           myfile.bak0, myfile.bak1, myfile.bak2
+#   - if you set onlyOnebackUp to 1, then the backup file will
+#     be overwritten each time (not recommended until you trust the script)
+onlyOneBackUp: 1
+
+# preferences for information displayed in the log file
+logFilePreferences:
+    showEveryYamlRead: 0
+    showAmalgamatedSettings: 0
+
+
+defaultIndent: "\t"
+# name of code blocks that should have their body aligned at ampersand delimiters
+lookForAlignDelims:
+    tabular:
+        spacesBeforeAmpersand: 2
+        spacesAfterAmpersand: 2
+
+# specialBeginEnd is, by default, mathmode focus, although
+# there's no restrictions
+indentRules:
+    leftRightAutoSizeBrackets: '  '
+specialBeginEnd:
+    leftRightAutoSizeBrackets:
+        begin: '\\left(?:\(|\[|\\\{|\.|\\l)'
+        end: '\\right(?:\)|\]|\\\}|\.|\\r)'
+        lookForThis: 1
+
+# replacements, only active when either -r or -rr switches are active
+replacements:
+    -
+        amalgamate: 1
+    -
+        # Be sure to set it last
+        # Combine 2 or more "half-width spaces" into 1
+        substitution: s/\h+/ /g
+        lookForThis: 1
+        when: before
+    -
+        # Insert 1 half-width space before and after "+"
+        substitution: s/(?<!\+|\-)\h{0,}\+\h{0,}(?!\+|\-)/ \+ /g
+        lookForThis: 1
+    -
+        # Insert 1 half-width space before and after "-"
+        substitution: s/(?<!\+|\-)\h{0,}\-\h{0,}(?!\+|\-)/ \- /g
+        lookForThis: 1
+    -
+        # Insert 1 half-width space before and after "="
+        substitution: s/(?<!\+|\-)\h{0,}=\h{0,}(?!\+|\-)/ = /g
+        lookForThis: 1
+    -
+        # Insert half-width space before the "\" in any command
+        substitution: s/\h{0,}\\(?!=\{)(\w)/ \\$1/g
+        lookForThis: 1
