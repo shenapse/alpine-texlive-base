@@ -9,7 +9,9 @@ A Lightweight TeXLive Docker image. It includes:
   - collection-latexrecommended
 - latexmk
 - latexindent
+- latexdiff
 - synctex
+- lacheck
 - texcount
 - chktex
 - biblatex & biber

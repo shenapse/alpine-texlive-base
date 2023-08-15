@@ -6,4 +6,8 @@ tlmgr install \
     cancel \
 	unicode-math-input \
 	mathcommand \
-	lualatex-math
+	lualatex-math \
+	ulem \
+	listings \
+	l3packages \
+	mleftright

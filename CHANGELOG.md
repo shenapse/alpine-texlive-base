@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.2] - 2023-08-16
+
+### Added
+
+- bundle latexdiff and lacheck by default.
+- add meta packages: ulem, listings, l3packages, mleftright
+
 ## [0.3.2] - 2023-08-10
 
 ### Added
