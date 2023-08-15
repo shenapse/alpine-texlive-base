@@ -1,4 +1,4 @@
-shena4746/alpine-texlive-base:0.3.2
+shena4746/alpine-texlive-base:0.3.3
 
 i ae: Virtual fonts for T1 encoded CMR-fonts
 i amscls: AMS document classes for LaTeX
@@ -116,6 +116,8 @@ i l3backend: LaTeX3 backend drivers
 i l3experimental: Experimental LaTeX3 concepts
 i l3kernel: LaTeX3 programming conventions
 i l3packages: High-level LaTeX3 concepts
+i lacheck: LaTeX checker
+i lacheck.x86_64-linuxmusl: x86_64-linuxmusl files of lacheck
 i latex: A TeX macro package that defines LaTeX
 i latex-bin: LaTeX executables and man pages
 i latex-bin.x86_64-linuxmusl: x86_64-linuxmusl files of latex-bin
@@ -123,10 +125,14 @@ i latex-fonts: A collection of fonts used in LaTeX distributions
 i latex-lab: LaTeX laboratory
 i latexbug: Bug-classification for LaTeX related bugs
 i latexconfig: configuration files for LaTeX-related formats
+i latexdiff: Determine and mark up significant differences between LaTeX files
+i latexdiff.x86_64-linuxmusl: x86_64-linuxmusl files of latexdiff
 i latexindent: Indent a LaTeX document, highlighting the programming structure
 i latexindent.x86_64-linuxmusl: x86_64-linuxmusl files of latexindent
 i latexmk: Fully automated LaTeX document generation
 i latexmk.x86_64-linuxmusl: x86_64-linuxmusl files of latexmk
+i latexpand: Expand \input and \include in a LaTeX document
+i latexpand.x86_64-linuxmusl: x86_64-linuxmusl files of latexpand
 i letltxmacro: Let assignment for LaTeX macros
 i lineno: Line numbers on paragraphs
 i listings: Typeset source code listings using LaTeX
@@ -167,6 +173,7 @@ i mfnfss: Packages to typeset oldgerman and pandora fonts in LaTeX
 i mfware: Supporting tools for use with Metafont
 i mfware.x86_64-linuxmusl: x86_64-linuxmusl files of mfware
 i microtype: Subliminal refinements towards typographical perfection
+i mleftright: Variants of delimiters that act as maths open/close
 i modes: A collection of Metafont mode_def's
 i mptopdf: mpost to PDF, native MetaPost graphics inclusion
 i mptopdf.x86_64-linuxmusl: x86_64-linuxmusl files of mptopdf
@@ -239,6 +246,7 @@ i translator: Easy translation of strings in LaTeX
 i txfonts: Times-like fonts in support of mathematics
 i typehtml: Typeset HTML directly from LaTeX
 i ucharcat: Implementation of the (new in 2015) XeTeX \Ucharcat command in lua, for LuaTeX
+i ulem: Package for underlining
 i underscore: Control the behaviour of "_" in text
 i unicode-data: Unicode data and loaders for TeX
 i unicode-math: Unicode mathematics support for XeTeX and LuaTeX

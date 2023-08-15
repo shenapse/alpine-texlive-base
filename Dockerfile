@@ -20,10 +20,13 @@ RUN ln -sf /usr/local/texlive/*/bin/* /usr/local/bin/texlive
 # tools for writing environment 
 RUN tlmgr install \
 	latexmk \
-	latexindent \
 	synctex \
-	texcount \
+	latexindent \
+	latexpand \
+	latexdiff \
 	chktex \
+	lacheck \
+	texcount \
 	biblatex \
 	biber
 # add packages for writing
@@ -35,7 +38,7 @@ RUN echo "paths:" > /work-tmp/${latexindent_config} \
 # remove --virtuals
 RUN apk del --purge .fetch-deps
 
-# perl requirements for latexindent
+# perl requirements for latex(indent)
 FROM alpine:3.17.0 AS dev-perl
 RUN apk add --no-cache --virtual .fetch-deps \
 	make \
@@ -43,14 +46,13 @@ RUN apk add --no-cache --virtual .fetch-deps \
 RUN apk add --no-cache \
 	perl \
 	xz
-# install requirements for latexindent
 RUN apk add --no-cache \
 	perl-yaml-tiny \
 	perl-log-dispatch \
 	perl-unicode-linebreak \
 	perl-log-log4perl
 RUN cpanm File::HomeDir
-# tar perl modules to resolve symbolic links of copied files
+# tar perl modules to later resolve symbolic links of compressed files
 # + some binary files
 RUN tar czf /modules.tar.gz \
 	/usr/local/share/perl5/site_perl \
