@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.4] - 2023-08-27
+
+### Added
+
+- explicitly set bash as the default shell
+- set `IMAGE_NAME` and `IMAGE_TAG` as environmental variables
+
 ## [0.3.3] - 2023-08-16
 
 ### Added

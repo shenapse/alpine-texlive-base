@@ -1,11 +1,10 @@
-#!/bin/sh
+#!/bin/bash -eux
 # test build
 
 WORKDIR=/workdir
 OUTDIR=${WORKDIR}/out
 TARGET_TEX=${WORKDIR}/tex/master.tex
 
-set -eu
 function finally {
   find ${OUTDIR} -type  f -not -name '*.pdf' -not -name '*.log' -not -name '*.synctex.gz'| xargs rm -f
 }

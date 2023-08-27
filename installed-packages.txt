@@ -1,4 +1,4 @@
-shena4746/alpine-texlive-base:0.3.3
+shena4746/alpine-texlive-base:0.3.4
 
 i ae: Virtual fonts for T1 encoded CMR-fonts
 i amscls: AMS document classes for LaTeX
