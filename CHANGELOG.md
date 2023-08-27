@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-- explicitly set bash as the default shell
+- locate `.bash_profile` at root.
 - set `IMAGE_NAME` and `IMAGE_TAG` as environmental variables
 
 ## [0.3.3] - 2023-08-16

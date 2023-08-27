@@ -24,7 +24,7 @@ texlive-version:
 # create new container and login to the shell
 .PHONY: shell
 shell:
-	docker run --env IMAGE_VERSION=${VERSION} -it --rm -v ${PWD}:/workdir ${IMAGE}
+	docker run -it --rm -v ${PWD}:/workdir ${IMAGE}
 
 # run test build
 .PHONY: test
