@@ -73,6 +73,7 @@ ENV IMAGE_TAG=${IMAGE_TAG}
 COPY --from=dev-texlive /usr/local/texlive /usr/local/texlive 
 COPY --from=dev-texlive /work-tmp/${latexindent_config} /root/${latexindent_config}
 COPY --from=dev-perl /modules.tar.gz /modules.tar.gz
+COPY ${PWD}/script/.bash_profile /root/.bash_profile
 RUN apk add --no-cache \
 	bash \
 	perl \
@@ -87,7 +88,7 @@ RUN apk add --no-cache \
 	&& ./update-tlmgr-latest.sh \
 	&& tlmgr update --self --all \
 	# remove files
-	&& rm -rf /var/cache/apk/* rm modules.tar.gz ./update-tlmgr-latest.sh
+	&& rm -rf /var/cache/apk/* rm modules.tar.gz ./update-tlmgr-latest.sh \
+	&& echo "source /root/.bash_profile" >> /etc/profile
 WORKDIR /${DIR}
-SHELL ["/bin/bash", "-c"]
-CMD ["bash"]
+CMD ["bash", "--login"]
