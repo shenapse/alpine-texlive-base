@@ -1,7 +1,8 @@
 USERNAME=shena4746
 SOURCE=Dockerfile
-VERSION=0.3.3
-IMAGE=${USERNAME}/alpine-texlive-base:${VERSION}
+VERSION=0.3.4
+IMAGE_NAME=${USERNAME}/alpine-texlive-base
+IMAGE=${IMAGE_NAME}:${VERSION}
 
 ifeq ($(OS),Windows_NT)
 	PWD=$(CURDIR)
@@ -10,7 +11,7 @@ endif
 # build container image
 .PHONY: build
 build:
-	docker image build -f ${SOURCE} -t ${IMAGE} . && make dump-package && make texlive-version
+	docker image build -f ${SOURCE} -t ${IMAGE} --build-arg IMAGE_NAME=${IMAGE_NAME} --build-arg IMAGE_TAG=${VERSION} . && make dump-package && make texlive-version
 
 .PHONY: dump-package
 dump-package:

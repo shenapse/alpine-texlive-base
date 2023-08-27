@@ -1,3 +1,5 @@
+ARG IMAGE_NAME="shena/alpine-texlive-base"
+ARG IMAGE_TAG="?"
 ARG DIR='workdir'
 ARG latexindent_config=".indentconfig.yaml"
 FROM alpine:3.17.0 AS dev-texlive
@@ -61,9 +63,13 @@ RUN tar czf /modules.tar.gz \
 RUN apk del --purge .fetch-deps
 
 FROM alpine:3.17.0
-ENV PATH /usr/local/bin/texlive:$PATH
+ARG IMAGE_NAME="shena/alpine-texlive-base"
+ARG IMAGE_TAG="?"
 ARG DIR
 ARG latexindent_config
+ENV PATH /usr/local/bin/texlive:$PATH
+ENV IMAGE_NAME=${IMAGE_NAME}
+ENV IMAGE_TAG=${IMAGE_TAG}
 COPY --from=dev-texlive /usr/local/texlive /usr/local/texlive 
 COPY --from=dev-texlive /work-tmp/${latexindent_config} /root/${latexindent_config}
 COPY --from=dev-perl /modules.tar.gz /modules.tar.gz
@@ -83,4 +89,5 @@ RUN apk add --no-cache \
 	# remove files
 	&& rm -rf /var/cache/apk/* rm modules.tar.gz ./update-tlmgr-latest.sh
 WORKDIR /${DIR}
+SHELL ["/bin/bash", "-c"]
 CMD ["bash"]
