@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -eux
 
 # $1 docker image
 echo "$1\n" > installed-packages.txt
